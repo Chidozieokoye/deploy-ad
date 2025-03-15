@@ -3,7 +3,14 @@
 </p>
 
 <h1>Active Directory Infrastructural Deployment in Azure</h1>
-Are you looking to deploy Active Directory in Azure? This step-by-step tutorial will walk you through the entire process, from creating a virtual network to configuring a Domain Controller in the cloud. Whether you're an IT beginner or an aspiring system administrator, this guide makes it easy to follow and practical to implement!.<br />
+This setup begins by creating an Azure Virtual Network (VNet), which serves as a private cloud network allowing multiple resources, like virtual machines (VMs), to communicate securely. Within this VNet, a virtual machine called DC-1 is deployed to act as the Domain Controller. The domain controller is responsible for managing user authentication, domain-join requests, and DNS resolution. A second virtual machine, Client-1, running Windows 10, is also deployed within the same VNet, simulating a client machine that will rely on the domain controller for network services.
+
+
+To ensure reliable communication, the DC-1 virtual machine’s Network Interface Card (NIC) is configured with a static private IP address, ensuring its IP address doesn’t change over time. This consistency is crucial for services like DNS resolution and domain joining. On Client-1, the DNS settings are adjusted to point to DC-1’s static private IP address. This enables Client-1 to resolve domain-related queries by contacting DC-1 for DNS resolution.
+
+
+Once these configurations are completed, a login is performed on Client-1, and a ping command is issued to test connectivity to DC-1’s static private IP address. If the ping is successful, it confirms that Client-1 can communicate with DC-1 over the VNet, indicating that the network configuration, DNS resolution, and domain communication are functioning as expected.
+.<br />
 
 
 <h2>Video Demonstration</h2>
@@ -26,13 +33,15 @@ https://youtu.be/wXTWp5gJG6E
 
 1. Set Up an Azure Virtual Network (VNet)
 
-2. Deploy a Virtual Machine (VM) for the Domain Controller
+2. Deploy a Virtual Machine for the Domain Controller Called DC-1
 
-3. Install Active Directory Domain Services (AD DS)
+3. Deploy a Windows-10 Virtual Machine Called Client-1
 
-4. Configure DNS & Network Settings
+4. Set Domain Controller’s NIC Private IP address to be static
 
-5. Create & Manage Active Directory Objects
+5. Set Client-1’s DNS settings to DC-1’s Private IP address.
+
+6. Login to Client-1 and attempt to ping DC-1’s private IP address
 
 
 <h2>Deployment and Configuration Steps</h2>
@@ -46,38 +55,47 @@ In this step, an Azure Virtual Network (VNet) is created to provide a secure, is
 </p>
 <br />
 
-<h2>Deploy a Virtual Machine</h2>
+<h2>Deploy a Virtual Machine for the Domain Controller Called DC-1</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this step, a Virtual Machine (VM) is deployed in Azure to act as the Domain Controller (DC) for Active Directory. The VM is configured with the necessary CPU, RAM, and storage to handle directory services. A static IP address is assigned to ensure stability, and RDP (Remote Desktop Protocol) access is enabled for management. This VM will later be used to install and configure Active Directory Domain Services (AD DS) to manage users, groups, and resources.
+A virtual machine named DC-1 is deployed in Azure to serve as the domain controller, which is responsible for managing user authentication, enforcing security policies, handling directory services, and providing DNS resolution for the domain. This VM runs a Windows Server operating system with the Active Directory Domain Services (AD DS) role installed, enabling it to create and manage a domain where other devices, such as client machines, can join and authenticate. The domain controller becomes a central part of the network infrastructure, ensuring secure access and management of resources.
 </p>
 <br />
 
-<h2>Install Active Directory Domain Services</h2>
+<h2>Deploy a Windows-10 Virtual Machine Called Client-1</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this step, Active Directory Domain Services (AD DS) is installed and promoted to a Domain Controller (DC) on the Virtual Machine (VM) in Azure. This enables the server to function as a Domain Controller (DC), allowing centralized management of users, computers, and security policies. The installation includes adding necessary features, configuring domain settings, and preparing the server for promotion to a fully functional domain environment.
+A virtual machine named Client-1 running Windows 10 is deployed in Azure to simulate a typical client machine within the network. This VM will be used to test and demonstrate how client devices interact with the domain controller for services like authentication, DNS resolution, and network resource access. The client machine will be configured to join the domain managed by the domain controller and will rely on it for directory services and security policies.
 </p>
 <br />
 
-<h2>Configure DNS & Network Settings</h2>
+<h2>Set Domain Controller’s NIC Private IP address to be static</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this step, the DNS and network settings are configured to ensure proper communication within the domain. The Domain Controller (DC) needs a static IP address and must use itself as the primary DNS server to handle name resolution for Active Directory. This ensures that domain-joined devices can locate and authenticate with the DC properly.
+The Domain Controller's Network Interface Card (NIC) private IP address is set to static to prevent it from changing over time, ensuring a consistent and reliable IP address for network communication, DNS resolution, and other services that rely on the Domain Controller. This is important for maintaining connectivity with client machines and ensuring that services like Active Directory and DNS continue to function properly without interruption due to IP address changes.
 </p>
 <br />
 
-<h2>Create & Manage Active Directory Objects</h2>
+<h2>Set Client-1’s DNS settings to DC-1’s Private IP address.</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this step, Active Directory objects such as users, groups, computers, and organizational units (OUs) are created and managed. These objects help organize and control access to resources within the domain. Administrators can define roles, set permissions, and enforce policies to maintain security and efficiency in the network.
+Client-1's DNS settings are configured to use DC-1’s private IP address, ensuring that the client machine queries the Domain Controller for DNS resolution. This allows Client-1 to resolve domain names, authenticate users, and access network resources by relying on the domain controller’s DNS services, which are essential for proper communication and functionality within the domain. This setup ensures that the client machine can find and interact with the domain controller for directory services and other domain-related tasks.
+</p>
+<br />
+
+<h2>Login to Client-1 and attempt to ping DC-1’s private IP address</h2>
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+You log in to Client-1 and open PowerShell to use the Test-Connection command (or the ping command) to ping DC-1’s private IP address, testing the network connectivity between the client machine and the domain controller. This step verifies that Client-1 can successfully reach DC-1 over the network, ensuring that the DNS settings are correct and that the client can communicate with the domain controller for authentication, directory services, and other domain-related functions. If the ping is successful, it confirms proper network configuration and connectivity between the two virtual machines.
 </p>
 <br />
