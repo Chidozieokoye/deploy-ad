@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
+<h1>Active Directory Infrastructural Deployment in Azure</h1>
 Are you looking to deploy Active Directory in Azure? This step-by-step tutorial will walk you through the entire process, from creating a virtual network to configuring a Domain Controller in the cloud. Whether you're an IT beginner or an aspiring system administrator, this guide makes it easy to follow and practical to implement!.<br />
 
 
