@@ -96,6 +96,6 @@ Client-1's DNS settings are configured to use DC-1’s private IP address, ensur
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-You log in to Client-1 and open PowerShell to use the Test-Connection command (or the ping command) to ping DC-1’s private IP address, testing the network connectivity between the client machine and the domain controller. This step verifies that Client-1 can successfully reach DC-1 over the network, ensuring that the DNS settings are correct and that the client can communicate with the domain controller for authentication, directory services, and other domain-related functions. If the ping is successful, it confirms proper network configuration and connectivity between the two virtual machines.
+I logged in to Client-1 and open PowerShell to use the Test-Connection command (or the ping command) to ping DC-1’s private IP address, testing the network connectivity between the client machine and the domain controller. This step verifies that Client-1 can successfully reach DC-1 over the network, ensuring that the DNS settings are correct and that the client can communicate with the domain controller for authentication, directory services, and other domain-related functions. If the ping is successful, it confirms proper network configuration and connectivity between the two virtual machines.
 </p>
 <br />
