@@ -3,12 +3,12 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+Are you looking to deploy Active Directory in Azure? This step-by-step tutorial will walk you through the entire process, from creating a virtual network to configuring a Domain Controller in the cloud. Whether you're an IT beginner or an aspiring system administrator, this guide makes it easy to follow and practical to implement!.<br />
 
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
+https://youtu.be/wXTWp5gJG6E
 
 <h2>Environments and Technologies Used</h2>
 
@@ -24,10 +24,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+Set Up an Azure Virtual Network (VNet)
+
+Deploy a Virtual Machine (VM) for the Domain Controller
+
+Install Active Directory Domain Services (AD DS)
+
+Configure DNS & Network Settings
+
+Create & Manage Active Directory Objects
 
 <h2>Deployment and Configuration Steps</h2>
 
