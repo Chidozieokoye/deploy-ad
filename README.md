@@ -37,7 +37,7 @@ https://youtu.be/wXTWp5gJG6E
 
 <h2>Deployment and Configuration Steps</h2>
 
-1. <h2>Set Up an Azure Virtual Network</h2>
+<h2>Set Up an Azure Virtual Network</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -46,7 +46,7 @@ In this step, an Azure Virtual Network (VNet) is created to provide a secure, is
 </p>
 <br />
 
-2. <h2>Deploy a Virtual Machine</h2>
+<h2>Deploy a Virtual Machine</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -55,7 +55,7 @@ In this step, a Virtual Machine (VM) is deployed in Azure to act as the Domain C
 </p>
 <br />
 
-3. <h2>Install Active Directory Domain Services</h2>
+<h2>Install Active Directory Domain Services</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -64,7 +64,7 @@ In this step, Active Directory Domain Services (AD DS) is installed and promoted
 </p>
 <br />
 
-4. <h2>Configure DNS & Network Settings</h2>
+<h2>Configure DNS & Network Settings</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -73,7 +73,7 @@ In this step, the DNS and network settings are configured to ensure proper commu
 </p>
 <br />
 
-5. <h2>Create & Manage Active Directory Objects</h2>
+<h2>Create & Manage Active Directory Objects</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
